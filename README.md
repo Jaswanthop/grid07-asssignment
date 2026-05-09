@@ -6,9 +6,9 @@
    ./mvnw spring-boot:run
 
 ## Tech Stack
- Spring Boot
- PostgreSQL (stores all posts, comments, users)
- Redis (handles rate limiting and notifications)
+ - Spring Boot
+ - PostgreSQL (stores all posts, comments, users)
+ - Redis (handles rate limiting and notifications)
 ## API Endpoints
  POST /api/posts — create a post
  POST /api/posts/{postId}/comments — add a comment
