@@ -1,0 +1,273 @@
+{
+  "info": {
+    "_postman_id": "24c44e3d-62bc-428c-9426-2e271b809334",
+    "name": "New Collection",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "43607004",
+    "_collection_link": "https://go.postman.co/collection/43607004-24c44e3d-62bc-428c-9426-2e271b809334?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "grid07-assignment",
+      "item": [
+        {
+          "name": "New Request",
+          "request": {
+            "method": "GET",
+            "header": []
+          },
+          "response": [
+            {
+              "name": "New Request",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n  \"authorType\": \"USER\",\r\n  \"content\": \"Hii from a first user\",\r\n  \"userId\": 1\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "localhost:8080/api/posts",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "api",
+                    "posts"
+                  ]
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Transfer-Encoding",
+                  "value": "chunked"
+                },
+                {
+                  "key": "Date",
+                  "value": "Sat, 09 May 2026 06:34:13 GMT"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=60"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"message\": \"Post created successfully\",\n    \"status\": 201,\n    \"data\": {\n        \"id\": 17,\n        \"content\": \"Hii from a first user\",\n        \"authorType\": \"USER\",\n        \"createdAt\": \"2026-05-09T12:04:13.961446\",\n        \"likeCount\": 0,\n        \"user\": {\n            \"id\": 1,\n            \"username\": \"jaswanth\",\n            \"premium\": true\n        },\n        \"bot\": null\n    }\n}"
+            }
+          ]
+        },
+        {
+          "name": "New Request",
+          "request": {
+            "method": "GET",
+            "header": []
+          },
+          "response": [
+            {
+              "name": "New Request",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n  \"authorType\": \"USER\",\r\n  \"userId\":1,\r\n  \"parentCommentId\":null,\r\n  \"content\": \"first comment added\",\r\n  \"botId\":null\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "localhost:8080/api/posts/17/comments",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "api",
+                    "posts",
+                    "17",
+                    "comments"
+                  ]
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Transfer-Encoding",
+                  "value": "chunked"
+                },
+                {
+                  "key": "Date",
+                  "value": "Sat, 09 May 2026 06:36:59 GMT"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=60"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"message\": \"Comment created successfully\",\n    \"status\": 201,\n    \"data\": {\n        \"id\": 111,\n        \"authorType\": \"USER\",\n        \"post\": {\n            \"id\": 17,\n            \"content\": \"Hii from a first user\",\n            \"authorType\": \"USER\",\n            \"createdAt\": \"2026-05-09T12:04:13.961446\",\n            \"likeCount\": 0,\n            \"user\": {\n                \"id\": 1,\n                \"username\": \"jaswanth\",\n                \"hibernateLazyInitializer\": {},\n                \"premium\": true\n            },\n            \"bot\": null\n        },\n        \"user\": {\n            \"id\": 1,\n            \"username\": \"jaswanth\",\n            \"hibernateLazyInitializer\": {},\n            \"premium\": true\n        },\n        \"bot\": null,\n        \"content\": \"first comment added\",\n        \"depthLevel\": 0,\n        \"createdAt\": \"2026-05-09T12:06:59.066326\",\n        \"parentComment\": null\n    }\n}"
+            }
+          ]
+        },
+        {
+          "name": "New Request",
+          "request": {
+            "method": "GET",
+            "header": []
+          },
+          "response": [
+            {
+              "name": "New Request",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "url": {
+                  "raw": "localhost:8080/api/posts/17/like",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "api",
+                    "posts",
+                    "17",
+                    "like"
+                  ]
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Transfer-Encoding",
+                  "value": "chunked"
+                },
+                {
+                  "key": "Date",
+                  "value": "Sat, 09 May 2026 06:37:53 GMT"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=60"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"message\": \"liked the post\",\n    \"status\": 201,\n    \"data\": {\n        \"id\": 17,\n        \"content\": \"Hii from a first user\",\n        \"authorType\": \"USER\",\n        \"createdAt\": \"2026-05-09T12:04:13.961446\",\n        \"likeCount\": 1,\n        \"user\": {\n            \"id\": 1,\n            \"username\": \"jaswanth\",\n            \"hibernateLazyInitializer\": {},\n            \"premium\": true\n        },\n        \"bot\": null\n    }\n}"
+            }
+          ]
+        },
+        {
+          "name": "New Request",
+          "request": {
+            "method": "GET",
+            "header": []
+          },
+          "response": []
+        },
+        {
+          "name": "New Request",
+          "request": {
+            "method": "GET",
+            "header": []
+          },
+          "response": [
+            {
+              "name": "New Request",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n  \"authorType\": \"BOT\",\r\n  \"userId\":null,\r\n  \"parentCommentId\":null,\r\n  \"content\": \"second comment added by bot 1\",\r\n  \"botId\":1\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "localhost:8080/api/posts/17/comments",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "api",
+                    "posts",
+                    "17",
+                    "comments"
+                  ]
+                }
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Transfer-Encoding",
+                  "value": "chunked"
+                },
+                {
+                  "key": "Date",
+                  "value": "Sat, 09 May 2026 06:40:43 GMT"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=60"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"message\": \"bot cannot interact with this human more than once per 10 minutes\",\n    \"status\": 429,\n    \"data\": null\n}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
