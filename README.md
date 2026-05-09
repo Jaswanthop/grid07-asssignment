@@ -1,3 +1,20 @@
+## How to Run
+1. Start Postgres and Redis:
+   docker-compose up -d
+
+2. Run the Spring Boot app:
+   ./mvnw spring-boot:run
+
+## Tech Stack
+ Spring Boot
+ PostgreSQL (stores all posts, comments, users)
+ Redis (handles rate limiting and notifications)
+## API Endpoints
+ POST /api/posts — create a post
+ POST /api/posts/{postId}/comments — add a comment
+ POST /api/posts/{postId}/like — like a post
+
+
 ## How I Guaranteed Thread Safety
 
 So the main problem I was thinking about was this:
