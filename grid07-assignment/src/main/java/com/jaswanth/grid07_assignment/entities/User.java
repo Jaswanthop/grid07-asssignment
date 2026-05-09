@@ -19,6 +19,6 @@ public class User {
    @Column(nullable = false,unique = true)
    private String username;
 
-   @Column(nullable = false,name="is_premimum")
+   @Column(nullable = false,name="is_premium")
    private boolean isPremium=false;
 }

@@ -7,28 +7,22 @@ import com.jaswanth.grid07_assignment.entities.Bot;
 import com.jaswanth.grid07_assignment.entities.Post;
 import com.jaswanth.grid07_assignment.entities.User;
 import com.jaswanth.grid07_assignment.repositry.BotRepositry;
-import com.jaswanth.grid07_assignment.repositry.CommentRepositry;
 import com.jaswanth.grid07_assignment.repositry.PostRepositry;
 import com.jaswanth.grid07_assignment.repositry.UserRepositry;
 import jakarta.transaction.Transactional;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.NoArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import static com.jaswanth.grid07_assignment.entities.AuthorType.BOT;
-import static com.jaswanth.grid07_assignment.entities.AuthorType.USER;
 
 @Service
-@AllArgsConstructor
-@NoArgsConstructor
-@Builder
+@RequiredArgsConstructor
 public class PostService {
 
-
-    private PostRepositry postRepositry;
-    private UserRepositry userRepositry;
-    private BotRepositry botRepositry;
+   private final RedisService redisService;
+    private final PostRepositry postRepositry;
+    private final UserRepositry userRepositry;
+    private final BotRepositry botRepositry;
 
     @Transactional
     public Post createPost(CreatePostRequest createPostRequest){
@@ -61,6 +55,7 @@ public class PostService {
     public Post likePost(Long postId){
 
         Post post=postRepositry.findById(postId).orElseThrow(()->new RuntimeException("post not found"));
+        redisService.incrementViralityScore(postId,20);
         post.setLikeCount(post.getLikeCount()+1);
         postRepositry.save(post);
         return post;
