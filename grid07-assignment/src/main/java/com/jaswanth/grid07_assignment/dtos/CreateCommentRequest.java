@@ -12,7 +12,6 @@ import lombok.NoArgsConstructor;
 public class CreateCommentRequest {
     private AuthorType authorType;
     private Long userId;
-    private Long postId;
     private Long parentCommentId;
     private String content;
     private Long botId;
