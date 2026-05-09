@@ -10,9 +10,9 @@
  - PostgreSQL (stores all posts, comments, users)
  - Redis (handles rate limiting and notifications)
 ## API Endpoints
- POST /api/posts — create a post
- POST /api/posts/{postId}/comments — add a comment
- POST /api/posts/{postId}/like — like a post
+- POST /api/posts — create a post
+- POST /api/posts/{postId}/comments — add a comment
+- POST /api/posts/{postId}/like — like a post
 
 
 ## How I Guaranteed Thread Safety
